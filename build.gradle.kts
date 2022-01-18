@@ -1,9 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.0"
+    kotlin("jvm") version "1.6.10"
     application
-    id("com.google.devtools.ksp") version "1.6.0-1.0.2"
+    kotlin("kapt") version "1.6.10"
 }
 
 group = "com.github.mingchuno"
@@ -13,12 +13,12 @@ repositories {
     mavenCentral()
 }
 
-val arrowVersion = "1.0.2-alpha.28"
+val arrowVersion = "1.0.1"
 
 dependencies {
     testImplementation(kotlin("test"))
     implementation("io.arrow-kt:arrow-optics:$arrowVersion")
-    ksp("io.arrow-kt:arrow-optics-ksp-plugin:$arrowVersion")
+    kapt("io.arrow-kt:arrow-meta:$arrowVersion")
 }
 
 tasks.test {
@@ -30,5 +30,5 @@ tasks.withType<KotlinCompile> {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("example.MainKt")
 }
