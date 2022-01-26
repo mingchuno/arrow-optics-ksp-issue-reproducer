@@ -12,7 +12,7 @@ version = "1.0-SNAPSHOT"
 
 repositories { mavenCentral() }
 
-val arrowVersion = "1.0.2-alpha.43"
+val arrowVersion = "1.0.3-alpha.1"
 
 dependencies {
   testImplementation(kotlin("test"))
